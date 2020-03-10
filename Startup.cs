@@ -29,6 +29,7 @@ namespace Shop_API
         {
             services.AddDbContext<DataContext>(options => options.UseSqlServer(Configuration.GetConnectionString("ShopContext")));
             services.AddCors();
+            services.AddScoped<IAuthRepository, AuthRepository>();
             services.AddControllers();
         }
 
