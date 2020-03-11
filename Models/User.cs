@@ -7,6 +7,7 @@ namespace Shop_API.Models
     {
         public int Id { get; set; }
         public string Username { get; set; }
+        public string Email { get; set; }
         public string Gender { get; set; }
         public DateTime DateOfBirth { get; set; }
         public DateTime Created { get; set; }
