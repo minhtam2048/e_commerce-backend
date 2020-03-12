@@ -1,7 +1,12 @@
 using System;
+using System.IdentityModel.Tokens.Jwt;
+using System.Text;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using Shop_API.Models;
+using System.Security.Claims;
 
 namespace Shop_API.Data
 {
@@ -69,6 +74,28 @@ namespace Shop_API.Data
                 return true;
             }
             return false;
+        }
+
+        public ClaimsPrincipal GetClaimsPrincipleFromExpiredToken(string token)
+        {
+            var tokenValidationParameters = new TokenValidationParameters
+            {
+                ValidateIssuerSigningKey = true,
+                // IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(Microsoft.Extensions.Configuration.GetSection("AppSettings:Token").Value)),
+                IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("the server key used to sign the JWT token is here, use more than 16 chars")),
+                ValidateIssuer = false,
+                ValidateAudience = false,
+            };
+
+            var tokenHandler = new JwtSecurityTokenHandler();
+            SecurityToken securityToken;
+            var principal = tokenHandler.ValidateToken(token, tokenValidationParameters, out securityToken);
+            var jwtSecurityToken = securityToken as JwtSecurityToken;
+            if (jwtSecurityToken == null || !jwtSecurityToken.Header.Alg.Equals(SecurityAlgorithms.HmacSha256, StringComparison.InvariantCultureIgnoreCase))
+            {
+                throw new SecurityTokenException("Invalid Token");
+            }
+            return principal;
         }
     }
 }

@@ -8,6 +8,8 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Microsoft.Extensions.Configuration;
 using System.IdentityModel.Tokens.Jwt;
+using System.Security.Cryptography;
+using System;
 
 namespace Shop_API.Controllers
 {
@@ -38,7 +40,7 @@ namespace Shop_API.Controllers
             };
 
             var createdUser = await _repo.Register(userToCreate, userForRegisterDto.Password);
-            return StatusCode(201);
+            return Ok();
         }
 
         [HttpPost("login")]
@@ -75,6 +77,24 @@ namespace Shop_API.Controllers
             return Ok(new {
                 token = tokenHandler.WriteToken(token)
             });
+        }
+        // [HttpPost]
+        // public  IActionResult RefreshToken(string token, string refreshToken) {
+        //     var principal = _repo.GetClaimsPrincipleFromExpiredToken(token);
+        //     var username = principal.Identity.Name;
+        //     var savedRefreshToken = GetRefreshToken(username);
+        //     if(savedRefreshToken != refreshToken)
+        //         throw new SecurityTokenException("Invalid refresh token");
+        //     var new JwtToken = GenerateToken()
+        // }
+
+
+        public string GenerateRefreshToken() {
+            var randomNumber = new byte[32];
+            using (var rng = RandomNumberGenerator.Create()) {
+                rng.GetBytes(randomNumber);
+                return Convert.ToBase64String(randomNumber);
+            }
         }
     }
 }
