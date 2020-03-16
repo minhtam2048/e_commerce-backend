@@ -17,6 +17,6 @@ namespace Shop_API.Models
         public string Country { get; set; }
         public byte[] PasswordHash { get; set; }
         public byte[] PasswordSalt { get; set; }
-        public ICollection<Photo> Photos {get;set;}
+        public string ImageUrl { get; set; }
     }
 }

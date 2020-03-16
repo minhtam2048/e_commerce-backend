@@ -1,0 +1,81 @@
+[
+    {
+        "Title": "Cloth",
+        "Description": "A nice item for you",
+        "Price": 30.99,
+        "DateAdded": "2020-07-12",
+        "Photos": [
+            {
+                "url": "https://i.ibb.co/7CQVJNm/blue-tank.png",
+                "description": "item description",
+                "DateAdded": "2020-07-12",
+                "isMain": true
+            },
+            {
+                "url": "https://i.ibb.co/4W2DGKm/floral-blouse.png",
+                "description": "item description",
+                "DateAdded": "2020-07-12",
+                "isMain": false
+            },
+            {
+                "url": "https://i.ibb.co/KV18Ysr/floral-skirt.png",
+                "description": "item description",
+                "DateAdded": "2020-07-12",
+                "isMain": false
+            }
+        ]
+    },
+    {
+        "Title": "Pant",
+        "Description": "A nice item for you",
+        "Price": 50.99,
+        "DateAdded": "2020-07-12",
+        "Photos": [
+            {
+                "url": "https://i.ibb.co/XzcwL5s/black-shearling.png",
+                "description": "item description",
+                "DateAdded": "2020-07-12",
+                "isMain": true
+            },
+            {
+                "url": "https://i.ibb.co/mJS6vz0/blue-jean-jacket.png",
+                "description": "item description",
+                "DateAdded": "2020-07-12",
+                "isMain": false
+            },
+            {
+                "url": "https://i.ibb.co/N71k1ML/grey-jean-jacket.png",
+                "description": "item description",
+                "DateAdded": "2020-07-12",
+                "isMain": false
+            }
+        ]
+    },
+    {
+        "Title": "Shirt",
+        "Description": "A nice item for you",
+        "Price": 50.99,
+        "DateAdded": "2020-07-12",
+        "Photos": [
+            {
+                "url": "https://i.ibb.co/xJS0T3Y/camo-vest.png",
+                "description": "item description",
+                "DateAdded": "2020-07-12",
+                "isMain": true
+            },
+            {
+                "url": "https://i.ibb.co/55z32tw/long-sleeve.png",
+                "description": "item description",
+                "DateAdded": "2020-07-12",
+                "isMain": false
+            },
+            {
+                "url": "https://i.ibb.co/RvwnBL8/pink-shirt.png",
+                "description": "item description",
+                "DateAdded": "2020-07-12",
+                "isMain": false
+            }
+        ]
+    }
+
+]

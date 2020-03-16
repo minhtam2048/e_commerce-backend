@@ -56,3 +56,4 @@ C:\Users\Dell\flutter_dev\shop_app_API\Shop_API\bin\Debug\netcoreapp3.1\System.I
 C:\Users\Dell\flutter_dev\shop_app_API\Shop_API\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\Dell\flutter_dev\shop_app_API\Shop_API\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
 C:\Users\Dell\flutter_dev\shop_app_API\Shop_API\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\Dell\flutter_dev\shop_app_API\Shop_API\bin\Debug\netcoreapp3.1\Data\ProductDataSeed.json
