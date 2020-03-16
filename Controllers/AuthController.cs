@@ -63,19 +63,28 @@ namespace Shop_API.Controllers
             
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha512Signature);
             
-            var tokenDescriptor = new SecurityTokenDescriptor
-            {
-                Subject = new ClaimsIdentity(claims),
-                Expires = System.DateTime.Now.AddMonths(1),
-                SigningCredentials = creds
-            };
+            // var tokenDescriptor = new SecurityTokenDescriptor
+            // {
+            //     Subject = new ClaimsIdentity(claims),
+            //     Expires = System.DateTime.Now.AddMonths(1),
+            //     SigningCredentials = creds
+            // };
 
-            var tokenHandler = new JwtSecurityTokenHandler();
+            
 
-            var token = tokenHandler.CreateToken(tokenDescriptor);
+            // var tokenHandler = new JwtSecurityTokenHandler();
+
+            // var token = tokenHandler.CreateToken(tokenDescriptor);
+            var token = new JwtSecurityToken(
+                issuer: "localhost",
+                audience: "localhost",
+                claims: claims,
+                expires: DateTime.Now.AddMonths(1),
+                signingCredentials: creds
+            );
 
             return Ok(new {
-                token = tokenHandler.WriteToken(token)
+                token = new JwtSecurityTokenHandler().WriteToken(token)
             });
         }
         // [HttpPost]
