@@ -1,7 +1,10 @@
+using System.Collections.Generic;
 using System.Threading.Tasks;
+using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Shop_API.Data;
+using Shop_API.Dtos;
 
 namespace Shop_API.Controllers
 {
@@ -11,15 +14,18 @@ namespace Shop_API.Controllers
     public class ProductsController : ControllerBase
     {
         private readonly IProductRepository _repo;
-        public ProductsController(IProductRepository repo)
+        private readonly IMapper _mapper;
+        public ProductsController(IProductRepository repo, IMapper mapper)
         {
             _repo = repo;
+            _mapper = mapper;
         }
 
         [HttpGet]
         public async Task<IActionResult> GetProducts() 
         {
             var products = await _repo.GetProducts();
+            var productsToReturn = _mapper.Map<IEnumerable<ProductForListDto>>(products);
             return Ok(products);
         }
 
@@ -27,6 +33,8 @@ namespace Shop_API.Controllers
         public async Task<IActionResult> GetProduct(int id)
         {
             var product = await _repo.GetProduct(id);
+            var productToReturn = _mapper.Map<ProductForDetailedDto>(product);
+
             return Ok(product);
         }
     }

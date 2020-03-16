@@ -57,3 +57,5 @@ C:\Users\Dell\flutter_dev\shop_app_API\Shop_API\bin\Debug\netcoreapp3.1\Microsof
 C:\Users\Dell\flutter_dev\shop_app_API\Shop_API\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
 C:\Users\Dell\flutter_dev\shop_app_API\Shop_API\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Users\Dell\flutter_dev\shop_app_API\Shop_API\bin\Debug\netcoreapp3.1\Data\ProductDataSeed.json
+C:\Users\Dell\flutter_dev\shop_app_API\Shop_API\bin\Debug\netcoreapp3.1\AutoMapper.dll
+C:\Users\Dell\flutter_dev\shop_app_API\Shop_API\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
