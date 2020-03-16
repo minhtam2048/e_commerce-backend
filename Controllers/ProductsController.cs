@@ -26,7 +26,7 @@ namespace Shop_API.Controllers
         {
             var products = await _repo.GetProducts();
             var productsToReturn = _mapper.Map<IEnumerable<ProductForListDto>>(products);
-            return Ok(products);
+            return Ok(productsToReturn);
         }
 
         [HttpGet("{id}")]
@@ -35,7 +35,7 @@ namespace Shop_API.Controllers
             var product = await _repo.GetProduct(id);
             var productToReturn = _mapper.Map<ProductForDetailedDto>(product);
 
-            return Ok(product);
+            return Ok(productToReturn);
         }
     }
 }
