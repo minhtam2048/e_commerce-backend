@@ -8,8 +8,8 @@ namespace Shop_API.Data
     {
         void Add<T>(T entity) where T : class;
         void Delete<T>(T entity) where T : class;
-        Task<bool>SaveAll();
-        Task<IEnumerable<Product>> GetProducts();
+        Task<bool> SaveAll();
         Task<Product> GetProduct(int id);
+        Task<IEnumerable<Product>> GetProducts();
     }
 }

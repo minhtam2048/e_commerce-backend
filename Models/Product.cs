@@ -12,5 +12,6 @@ namespace Shop_API.Models
         public double Price { get; set; }
         public DateTime DateAdded { get; set; }
         public ICollection<Photo> Photos { get; set; }
+        public ICollection<OrderProduct> OrderProducts { get; set; }
     }
 }

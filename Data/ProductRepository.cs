@@ -16,7 +16,6 @@ namespace Shop_API.Data
         {
             _context.Add(entity);
         }
-
         public void Delete<T>(T entity) where T : class
         {
             _context.Remove(entity);

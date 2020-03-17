@@ -18,5 +18,6 @@ namespace Shop_API.Models
         public byte[] PasswordHash { get; set; }
         public byte[] PasswordSalt { get; set; }
         public string ImageUrl { get; set; }
+        public ICollection<Order> Orders { get; set; }
     }
 }
